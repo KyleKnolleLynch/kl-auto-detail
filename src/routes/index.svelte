@@ -1,3 +1,7 @@
+<script>
+  console.log("home");
+</script>
+
 <style>
   div {
     margin-top: 60px;
@@ -29,7 +33,7 @@
 
   @media (min-width: 480px) {
     h1 {
-      font-size: 4em;
+      font-size: 3.6em;
     }
   }
 </style>
@@ -39,7 +43,7 @@
 </svelte:head>
 
 <div>
-  <h1>KL Detailing</h1>
+  <h1>Custom Mobile Detailing</h1>
   <img src="hero-car.jpg" alt="hero-car" />
   <p>Customize your mobile detail to suit your needs!</p>
   <a href="details" class="btn">View Details</a>
