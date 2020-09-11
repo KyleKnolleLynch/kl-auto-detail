@@ -1,10 +1,20 @@
 <script>
-  let title,
-  cost,
-  details;
+  import { goto } from '@sapper/app';
 
-  const handleSubmit = () => {
-    console.log(details);
+  let title;
+  let cost;
+  let specifics;
+
+  const handleSubmit = async () => {
+    if (title && cost && specifics) {
+      const res = await fetch("details.json", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title, cost, specifics })
+      });
+      const updatedDetails = await res.json();
+      goto('details');
+    }
   };
 </script>
 
@@ -39,6 +49,6 @@
     placeholder="allowed budget"
     bind:value={cost}
     required />
-  <textarea placeholder="detail specifics" bind:value={details} required />
+  <textarea placeholder="detail specifics" bind:value={specifics} required />
   <button class="btn">Submit Detail Request</button>
 </form>

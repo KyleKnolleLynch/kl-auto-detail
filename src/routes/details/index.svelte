@@ -38,7 +38,7 @@
 <ul>
   {#each details as detail}
     <li>
-      <a href="/">{detail.title}</a>
+      <a rel=prefetch href={`details/${detail.id}`}>{detail.title}</a>
     </li>
   {/each}
 </ul>
